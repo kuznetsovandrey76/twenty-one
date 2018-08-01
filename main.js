@@ -1,4 +1,7 @@
+var new_game = document.querySelector('.new-game');
 var next_card = document.querySelector('.card-field');
+var card_inner = document.querySelector('.card-inner');
+var card_inner2 = document.querySelectorAll('.card-inner2');
 var take_card = document.querySelector('.take-card');
 
 var cards = [
@@ -13,8 +16,15 @@ var cards = [
 ];
 
 var random_card;
+var iter = 0;
+var flag = false;
 
-function next() {
+function next(bool) {
+	if (bool) {	
+		card_inner.innerHTML += '<div class="card-inner2 lightgreen"></div>' 
+		card_inner2 = document.querySelectorAll('.card-inner2');
+		console.log(card_inner2);
+	}
 	var temp;
 	random_card = Math.floor(Math.random()*cards.length);
 	if (cards[random_card][0]) {
@@ -35,13 +45,23 @@ function next() {
 			cards[random_card][0] = 0;			 
 		}
 		console.log(temp);
-		next_card.innerText = temp;
+		card_inner2[iter].innerText = temp;
+		iter+=1;
 	} else {
 		next();
 	}
 }
 
 
-take_card.addEventListener('click', next, false);
+take_card.addEventListener('click', function() {
+	if (flag) next(true);
+}, false);
+
+new_game.addEventListener('click', function() {
+	flag = true;
+	card_inner2[0].classList.toggle('lightgreen');
+	next(false);
+	card_inner2[1].classList.toggle('lightgreen');
+}, false);
 
 

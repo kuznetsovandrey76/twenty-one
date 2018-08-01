@@ -1,0 +1,125 @@
+* {
+	margin: 0;	
+}
+
+body,
+.player,
+.score,
+.card,
+.total {
+	display: flex;
+	align-items: center;
+	justify-content: center;			
+}
+
+body {
+	background: goldenrod; 
+	width: 100%;
+	height: 100vh;
+	font-family: Tahoma;
+}
+
+.container {
+	width: 90%;
+	height: 90vh;
+	position: fixed;	
+	background: white;	
+	display: flex;
+	-webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, .3);
+	        box-shadow: 0 10px 40px rgba(0, 0, 0, .3);
+}
+
+.left {
+	width: 50%;
+	background: beige;	
+	/*background: rgba(255, 255, 255, .5);*/
+	text-align: center;
+}
+.right {
+	width: 50%;
+	text-align: center;
+	background: white;			
+}
+img {
+	border: 1px solid;
+	background: white;
+	width: 300px;
+	height: 300px;
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+}
+.player {
+	height: 22vh;
+	text-transform: uppercase;
+	font-size: 50px;
+}
+.player p {
+	margin-bottom: -10vh;	
+}
+
+.score {
+	height: 10vh;
+	color: darkred;
+	font-size: 100px;
+}
+
+.card {
+	height: 36vh;
+}
+
+.total {
+	height: 22vh;			
+	/*background: tomato;*/
+}
+.new-game,
+.step, 
+.card-field {
+	position: absolute;
+	top: 4%;
+	left: 40%;
+	/*background: tomato;*/
+	width: 20%;
+	text-align: center;
+	font-size: 24px;
+}
+
+.step {
+	top: 75%;	
+}
+.step p {
+	margin: 20px 0;
+}
+.card-field {
+	top: 18%;
+	border: 1px solid;
+	height: 20vh;
+	left: 45.5%;
+	width: 9%;
+	background: lightgreen;
+}
+.card-inner {
+	/*border: 1px solid;*/
+	height: 20vh; 
+	width: 100%;
+	/*background: lightblue;*/
+	display: flex;
+	justify-content: center;		
+}
+.card-inner div {
+	width: 20%;
+	margin: 0 4px;
+	height: 20vh;
+	border: 1px solid;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	/*display: inline-block;			*/
+}
+.take-card,
+.new-game {
+	cursor: pointer;
+}
+
+.lightgreen {
+	background: lightgreen;
+}
